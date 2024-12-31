@@ -48,14 +48,14 @@ public void setSearchValue(String value){
 public void executeSearch(){
     List<WebElement> searchButton=
             driver.findElements(By.xpath(xPathOfSearchButton));
-    searchButton.getFirst().click();
+    searchButton.get(0).click();
 }
 public void clickToTitle(){
     WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
     List<WebElement> phonesList =
             driverWait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath(xPathOfTitle),3 ));
-    phonesList.getFirst().click();
+    phonesList.get(0).click();
 }
 public List<WebElement> getPhonePrice(){
     WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(10));

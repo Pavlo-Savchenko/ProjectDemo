@@ -22,6 +22,6 @@ public class RestTest {
          Response response =requestSpecification.get();
          response.prettyPrint();
         ResponseDto dto =response.as(ResponseDto.class);
-Assert.assertNotNull(dto.getResults().getFirst().getLocation());
+Assert.assertNotNull(dto.getResults().get(0).getLocation());
     }
 }

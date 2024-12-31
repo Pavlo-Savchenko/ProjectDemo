@@ -48,7 +48,7 @@ public class SqlTest {
     public void insertFromDbTest() throws SQLException, ClassNotFoundException {
         connectionDb();
         try{
-            String name = getFirstPhoneName().getFirst().getText();
+            String name = getFirstPhoneName().get(0).getText();
             String price = getPricePhone().get(2).getText();
                 statement.execute(String.format(INSERT_PATTERN,name,price));
         }finally{
