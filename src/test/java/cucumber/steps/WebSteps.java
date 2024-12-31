@@ -1,4 +1,4 @@
-package cucumber.steps.webSteps;
+package cucumber.steps;
 
 import io.cucumber.java.en.Given;
 import org.example.pageObject.AlloPage;
