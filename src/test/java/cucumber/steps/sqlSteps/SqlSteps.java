@@ -1,4 +1,4 @@
-package cucumber.steps;
+package cucumber.steps.sqlSteps;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;

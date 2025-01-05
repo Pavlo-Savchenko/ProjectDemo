@@ -23,7 +23,7 @@ public class AlloPage {
     private final static String xPathOfSearchButton = "//button[contains(@class,'search-form__submit-button')]";
 
 
-    public AlloPage(WebDriver driver) {
+     public AlloPage(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -64,9 +64,9 @@ public List<WebElement> getPhonePrice(){
             driverWait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath(xPathOfPrice),1 ));
     return phonePriceList;
 }
-public WebElement getPhoneName(){
+public WebElement getProductName(){
 
-    WebElement phoneName = driver.findElement(By.xpath(xPathOfPhoneName) );
-    return phoneName;
+    WebElement name = driver.findElement(By.xpath(xPathOfPhoneName) );
+    return name;
     }
 }

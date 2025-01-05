@@ -1,11 +1,11 @@
 package cucumber.steps;
 
+import cucumber.steps.webSteps.WebSteps;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 import org.example.pageObject.AlloPage;
 import org.example.util.CucumberStorage;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
@@ -24,7 +24,7 @@ public WebDriver driver;
 
         @BeforeSuite
         public void inet(){
-                driver = new ChromeDriver();
+                driver = org.example.driver.WedDriverFactory.getDriver();
                 WebSteps.alloPage = new AlloPage(driver);
         }
         @BeforeMethod
