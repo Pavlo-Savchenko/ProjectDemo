@@ -31,7 +31,6 @@ public class AlloPage {
     private final static String xPathOfSeriesButton = "//h3[contains(@class,'header-title')]";
     private final static String xPathOfProMaxCheckBox2 = "//a[contains(@data-id,'223336')]";
     private final static String xPathOfContactBoxes = "//input";
-    private final static String xPathOf
 
 
     public AlloPage(WebDriver driver) {
