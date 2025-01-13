@@ -21,6 +21,17 @@ public class AlloPage {
     private final static String xPathOfPrice = "//span[contains(@class,'sum')]";
     private final static String xPathOfPhoneName = "//h1[contains(@class,'p-view__header-title')]";
     private final static String xPathOfSearchButton = "//button[contains(@class,'search-form__submit-button')]";
+    private final static String xPathOfProductName = "//a[contains(@class,'product-card__title')]";
+    private final static String xPathOfBuyButton = "//button[contains(@id,'product-buy-button')]";
+    private final static String xPathOfBuyNowButton = "//button[contains(@class,'order-now')]";
+    private final static String xPathOfDeliveryButton = "//button[contains(@class,'a-button a-button--block a-button--lg a-button--primary')]";
+    private final static String xPathOfCatalogButton = "//div[contains(@class,'ct-button')]";
+    private final static String xPathOfSmartphonesButton = "//li[contains(@class,'mm__item')]";
+    private final static String xPathOfAppleButton = "//a[contains(@class,'portal-card__link')]";
+    private final static String xPathOfSeriesButton = "//h3[contains(@class,'header-title')]";
+    private final static String xPathOfProMaxCheckBox2 = "//a[contains(@data-id,'223336')]";
+    private final static String xPathOfContactBoxes = "//input";
+    private final static String xPathOf
 
 
     public AlloPage(WebDriver driver) {
@@ -58,7 +69,8 @@ public class AlloPage {
         WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         List<WebElement> phonesList =
-                driverWait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath(xPathOfTitle), 3));
+                driverWait.until(ExpectedConditions.
+                        numberOfElementsToBeMoreThan(By.xpath(xPathOfTitle), 3));
         phonesList.get(0).click();
     }
 
@@ -66,7 +78,8 @@ public class AlloPage {
         WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         List<WebElement> phonePriceList =
-                driverWait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath(xPathOfPrice), 1));
+                driverWait.until(ExpectedConditions.
+                        numberOfElementsToBeMoreThan(By.xpath(xPathOfPrice), 1));
         return phonePriceList;
     }
 
@@ -77,57 +90,66 @@ public class AlloPage {
     }
     public void printProductname(){
         WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> elements = driverWait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//a[contains(@class,'product-card__title')]"),3 ));
+        List<WebElement> elements = driverWait.until(ExpectedConditions.
+                numberOfElementsToBeMoreThan(By.xpath(xPathOfProductName),3 ));
         System.out.println(elements.get(0).getText());
     }
     ///////////////////BUTTONS///////////////
-    public WebElement BuyButton() {
-        WebElement button = driver.findElement(By.xpath("//button[contains(@id,'product-buy-button')]"));
+    public WebElement buyButton() {
+        WebElement button = driver.findElement(By.xpath(xPathOfBuyButton));
         return button;
     }
 
-    public List<WebElement> BuyNowButton() {
+    public List<WebElement> buyNowButton() {
         WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> button = webDriverWait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//button[contains(@class,'order-now')]"), 1));
+        List<WebElement> button = webDriverWait.until(ExpectedConditions.
+                numberOfElementsToBe(By.xpath(xPathOfBuyNowButton), 1));
         return button;
     }
     public List<WebElement> deliveryButton() {
         WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> button = webDriverWait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//button[contains(@class,'a-button a-button--block a-button--lg a-button--primary')]"), 1));
+        List<WebElement> button = webDriverWait.until(ExpectedConditions.
+                numberOfElementsToBe(By.xpath(xPathOfDeliveryButton), 1));
         return button;
         }
         public List<WebElement> getCatalogButton(){
-        List<WebElement> button = driver.findElements(By.xpath("//div[contains(@class,'ct-button')]"));
+        List<WebElement> button = driver.findElements(By.xpath(xPathOfCatalogButton));
         return button;
     }
     public List<WebElement> getSmartphonesButton(){
         WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        List<WebElement> button = driverWait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//li[contains(@class,'mm__item')]"),3 ));
+        List<WebElement> button = driverWait.until(ExpectedConditions.
+                numberOfElementsToBeMoreThan(By.xpath(xPathOfSmartphonesButton),3 ));
         return button;
     }
     public List<WebElement> getAppleButton() {
         WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        List<WebElement> button = driverWait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//a[contains(@class,'portal-card__link')]"), 5));
+        List<WebElement> button = driverWait.until(ExpectedConditions.
+                numberOfElementsToBeMoreThan(By.xpath(xPathOfAppleButton), 5));
        return button;
     }
     /////////////BUTTONS FROM THE FILTER/////////////
     public List<WebElement> getSeriesButton(){
         WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        List<WebElement> button = driverWait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//h3[contains(@class,'header-title')]"),5 ) );
+        List<WebElement> button = driverWait.until(ExpectedConditions.
+                numberOfElementsToBeMoreThan(By.xpath(xPathOfSeriesButton),5 ) );
         return button;
     }
     public WebElement getProMaxCheckBox2() {
-        WebElement button = driver.findElement(By.xpath("//a[contains(@data-id,'223336')]") );
+        WebElement button = driver.findElement(By.xpath(xPathOfProMaxCheckBox2) );
         return button;
     }
     public void getFilterChipest(){
         WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        List<WebElement> elements = driverWait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//a[contains(@data-id,'serija_smartfony')]"),2) );
+        List<WebElement> elements = driverWait.until(ExpectedConditions.
+                numberOfElementsToBe(By.xpath("//a[contains(@data-id,'serija_smartfony')]"),2) );
         WebDriverWait driverWait1 = new WebDriverWait(driver, Duration.ofSeconds(5));
-        List<WebElement> button = driverWait1.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//div[contains(@class,'sort-by__select')]"),1 ));
+        List<WebElement> button = driverWait1.until(ExpectedConditions.
+                numberOfElementsToBe(By.xpath("//div[contains(@class,'sort-by__select')]"),1 ));
         button.get(0).click();
         WebDriverWait driverWait2 = new WebDriverWait(driver, Duration.ofSeconds(5));
-        List<WebElement> button2 = driverWait2.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//li[contains(@class,'sort-by__item')]"),3));
+        List<WebElement> button2 = driverWait2.until(ExpectedConditions.
+                numberOfElementsToBeMoreThan(By.xpath("//li[contains(@class,'sort-by__item')]"),3));
         if(button2.isEmpty()){
             button2.get(0).click();
         }
@@ -135,17 +157,20 @@ public class AlloPage {
     /////////ENTER CONTACT INFORMATION//////////////
     public void searchNumberBox(String value){
         WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> numberBox = webDriverWait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//input"),3 ));
+        List<WebElement> numberBox = webDriverWait.until(ExpectedConditions.
+                numberOfElementsToBe(By.xpath(xPathOfContactBoxes),3 ));
         numberBox.get(0).sendKeys(value);
     }
     public void searchFirstNameBox(String value){
         WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> numberBox = webDriverWait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//input"),3 ));
+        List<WebElement> numberBox = webDriverWait.until(ExpectedConditions.
+                numberOfElementsToBe(By.xpath(xPathOfContactBoxes),3 ));
         numberBox.get(1).sendKeys(value);
     }
     public void searchLastNameBox(String value){
         WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> numberBox = webDriverWait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//input"),3 ));
+        List<WebElement> numberBox = webDriverWait.until(ExpectedConditions.
+                numberOfElementsToBe(By.xpath(xPathOfContactBoxes),3 ));
         numberBox.get(2).sendKeys(value);
     }
 }

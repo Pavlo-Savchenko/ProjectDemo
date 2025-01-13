@@ -51,11 +51,11 @@ public void searchValue(String someName){
 }
 @Given("I click the buy button")
 public void clickToBuyButton(){
-        alloPage.BuyButton().click();
+        alloPage.buyButton().click();
 }
 @Given("I click the buy now button")
 public void clickToBuyNowButton(){
-        alloPage.BuyNowButton().get(0).click();
+        alloPage.buyNowButton().get(0).click();
 }
 @Given("I click the delivery button")
 public void clickToDeliveryButton(){
@@ -87,15 +87,10 @@ alloPage.getSeriesButton().get(5).click();
         alloPage.getFilterChipest();
     }
 
-
-
-
-
     @Given("I click to title")
 public void clickTitle() {
     alloPage.clickToTitle();
 }
-
 
 ///////////////SEARCHING NAMES///////////////////
 @Given("I search phone name")
