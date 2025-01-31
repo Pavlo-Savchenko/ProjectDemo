@@ -26,8 +26,8 @@ public WebDriver driver;
         @BeforeSuite
         public void inet(){
                 driver = org.example.driver.WedDriverFactory.getDriver();
-               // WebSteps.alloPage = new AlloPage(driver);
-                TestTaskSteps.swegLab=new SwegLabsPage(driver );
+                WebSteps.alloPage = new AlloPage(driver);
+                //TestTaskSteps.swegLab=new SwegLabsPage(driver );
         }
         @BeforeMethod
         public void clearStorage(){
